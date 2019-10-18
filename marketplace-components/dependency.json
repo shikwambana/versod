@@ -1,0 +1,26 @@
+{
+    "packages": [
+        {
+            "name": "n-ckeditor",
+            "version": "1.0.3",
+            "displayName": "CK Editor",
+            "description": "N-Ckeditor provides ready-to-use rich text editors created with a powerful framework. Made with real-time collaborative editing in mind. Its is build using the primary open-source project named CKEditor.",
+            "type": "Components",
+            "publisher": "Dayashankar Prajapati",
+            "platformSupportVersion": "6.1.0",
+            "packageType": "studio-package",
+            "dependencies": [
+                {
+                    "name": "@ckeditor/ckeditor5-angular",
+                    "version": "1.1.0",
+                    "packageType": "angular-package",
+                    "importStatement": "import { CKEditorModule } from '@ckeditor/ckeditor5-angular';",
+                    "imports": [
+                        "CKEditorModule"
+                    ]
+                }
+            ],
+            "importStatement": ""
+        }
+    ]
+}

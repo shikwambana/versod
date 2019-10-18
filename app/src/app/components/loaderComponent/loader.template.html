@@ -1,0 +1,5 @@
+<div fxLayout="row wrap" fxLayoutAlign="center center" [fxShow]="true" [fxHide]="false" *ngIf="!showLoader"><button mat-button n-fingerprint [fingerprintOptions]="{clientId: &apos;neutrinos&apos;, clientSecret: &apos;pwd&apos;}" (onsuccess)="success(&apos;Fingerprint Auth&apos; , $event)" (onerror)="error(&apos;Fingerprint Auth&apos; , $event)">Use fingerprint</button></div>
+<div fxLayout="row " fxLayoutGap="20px" fxLayoutAlign="space-evenly center" [fxShow]="true" [fxHide]="false" *ngIf="showLoader">
+  <mat-progress-spinner diameter="40" [mode]="&apos;indeterminate&apos;" color="primary" strokeWidth="4"></mat-progress-spinner>
+  <h4>{{data.message}}</h4>
+</div>

@@ -1,0 +1,13 @@
+{
+    "appPageId": "411db69b-fc82-e7cf-a1bb-f9007ea355c1",
+    "appPageName": "verse",
+    "componentName": "verseComponent",
+    "selectorName": "bh-verse",
+    "htmlFileName": "verse.template.html",
+    "tsFileName": "verse.component.ts",
+    "bkd": {
+        "designerHtml": "",
+        "designerReference": {},
+        "ts": ""
+    }
+}

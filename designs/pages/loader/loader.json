@@ -1,0 +1,13 @@
+{
+    "appPageId": "dd3691d2-d623-8efe-ea01-b9543d360deb",
+    "appPageName": "loader",
+    "componentName": "loaderComponent",
+    "selectorName": "bh-loader",
+    "htmlFileName": "loader.template.html",
+    "tsFileName": "loader.component.ts",
+    "bkd": {
+        "designerHtml": "",
+        "designerReference": {},
+        "ts": ""
+    }
+}

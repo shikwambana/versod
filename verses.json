@@ -1,0 +1,13 @@
+{
+    "artId": "",
+    "appName": "verses",
+    "description": "verse of the day",
+    "lastModified": "2019-10-17T17:33:13.897Z",
+    "artURL": "http://104.248.148.247:3000/bhive-art/",
+    "imgSourcePath": "appIcon-1571333593011.JPG",
+    "version": "1.0.0",
+    "dataSource": "neutrinos-delivery-rt",
+    "createDate": "2019-10-17T17:33:13.008Z",
+    "tenantName": "verses",
+    "oldAppName": "fingerprint-authentication"
+}

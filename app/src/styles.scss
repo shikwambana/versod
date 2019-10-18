@@ -1,0 +1,158 @@
+/*Importing default angular material css theme. */
+
+@import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
+@import "nDefaults.scss";
+@import url('https://fonts.googleapis.com/css?family=Asap&display=swap');
+
+.login-card .mat-card-image:first-child {
+    margin-top:0 !important
+}
+*{
+     font-family: 'Asap', sans-serif;;
+}
+.logo-img{
+    height: 100vh;
+    width: 100%;
+}
+.primary-red-btn {
+    background-color: #ee1c22;
+    color: white;
+    width: 100%;
+}
+.margin_0{
+    margin: 0px !important ;
+}
+.margin_left{
+    margin-left: 10px !important;
+}
+.width_1{
+width:100px
+}
+.width_2{
+width:200px
+}
+.width_3{
+    padding: 0 15px !important;
+    width:200px
+}
+.active{
+    border: 1px solid white;
+    background: #17a384;
+    border-radius: 20px;
+}
+
+.active:focus{
+    outline: none;
+}
+.sidenav_menu{
+    cursor:pointer;
+    padding: 10px 15px;
+    width:100%;
+}
+.sidenav_sidenavMenu{
+    padding: 10px 15px;
+    cursor:pointer;
+}
+.footer_cls{
+    z-index: 10;color:#fff;
+    background-color: #232f49;
+    position: absolute;     
+    bottom: 0px;     
+    width: 100%;
+    height: 30px;
+}
+.menu_icon_img{
+    width: 20px;
+}
+
+
+
+
+.curs_point{
+    cursor: pointer;
+}
+.logo_img_full{
+    width:100%;
+    margin-left:10%
+}
+.logo_img_short{
+    width:68%;
+    margin-left: 10px;
+}
+.sidenav{
+    background-color: #232f49 !important;
+}
+.footer_cls{
+    z-index: 10;color:#fff;
+    background-color: #232f49;
+    position: absolute;     
+    bottom: 0px;     
+    width: 100%;
+    height: 30px;
+}
+.menu_icon_img{
+    width: 20px;
+}
+
+//======================================
+.add {
+    // width: 100%;
+    padding: 0 20px;
+    bottom: 30px;
+    position: fixed;
+    margin: -5px 5px;
+    box-shadow: 0px -1px 9px -5px black;
+    width: 97%;
+    background: white;
+}
+
+.add button {
+    background-color: black;
+    color: white;
+    height : 40px;
+}
+
+.addname {
+    position: fixed;
+    top: 40%;
+    width: 95%;
+    padding: 15px;
+    margin: 0 7px;
+    border-radius: 10px;
+    box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, 0.4196078431372549);
+}
+
+.verseView {
+    padding: 10px 15px;
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translate3d(0, -100%, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.fadeInDown {
+  animation: fadeInDown .5s;
+}
+
+@keyframes slideInUp {
+  from {
+    transform: translate3d(0, 100%, 0);
+    visibility: visible;
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.slideInUp {
+  animation: slideInUp .5s;
+}

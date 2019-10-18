@@ -1,0 +1,25 @@
+{
+    "612ee53c-d6b7-0ef7-4743-4102b97d9d63": {
+        "dataModelId": "612ee53c-d6b7-0ef7-4743-4102b97d9d63",
+        "name": "user",
+        "description": "DM for mapping user values from form",
+        "dataSource": "neutrinos-delivery-rt",
+        "fields": [
+            {
+                "name": "username",
+                "fieldType": 2,
+                "isArray": false
+            },
+            {
+                "name": "password",
+                "fieldType": 2,
+                "isArray": false
+            },
+            {
+                "name": "remember",
+                "fieldType": 4,
+                "isArray": false
+            }
+        ]
+    }
+}

@@ -1,0 +1,30 @@
+<div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false" fxFill *ngIf="namePresent">
+  <div fxLayout="column wrap" fxFlex="100" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
+    <div fxLayout="column wrap" class="verseView fadeInDown" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false" *ngFor="let verse of versesList">
+      <div>
+        <p>{{verse.verse}}</p>
+        <p style="margin: 0;
+    font-size: 10px;
+    text-align: right;">{{verse.date | date : &apos;medium&apos;}} | {{verse.name}}</p>
+      </div>
+    </div>
+    <div fxLayout="column wrap" class="add slideInUp" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
+      <div fxLayout="row wrap" fxLayoutAlign="space-between center" [fxShow]="true" [fxHide]="false">
+        <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
+          <mat-form-field>
+            <textarea matInput [(ngModel)]="verse" required></textarea>
+          </mat-form-field>
+        </div><button mat-raised-button (click)="addVerse()">Add</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div fxLayout="column wrap" class="addname slideInUp" fxLayoutAlign="center center" [fxShow]="true" [fxHide]="false" *ngIf="!namePresent">
+  <div> What is your name?</div>
+  <div fxLayout="row wrap" fxLayoutAlign="space-between center" [fxShow]="true" [fxHide]="false">
+    <mat-form-field [appearance]="&apos;standard&apos;" [floatLabel]="&apos;auto&apos;">
+      <input matInput [(ngModel)]="name" required>
+
+    </mat-form-field><button mat-button (click)="addName()">Save</button>
+  </div>
+</div>

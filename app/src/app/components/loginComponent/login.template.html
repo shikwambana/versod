@@ -1,0 +1,35 @@
+<div fxLayout="row " fxFlex="100" fxLayoutAlign="center center" [fxShow]="true" [fxHide]="false" fxFill>
+  <div fxLayout="column wrap" fxFlex="63" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false" fxHide.xs="true"><img imgSrc="Web/Icons/Group 1458.png" class="logo-img"></div>
+  <div fxLayout="column " style="height: 100vh" fxFlex="37" fxLayoutGap="1.5em" fxLayoutAlign="center center" [fxShow]="true" [fxHide]="false" fxFlex.xs="100">
+    <div fxLayout="column " fxLayoutAlign="center center" [fxShow]="true" [fxHide]="false"><img imgSrc="Web/Icons/favicon.ico.png" style="width:55%;margin-right: 5%;">
+      <p style="font-size:13px" class="margin_0">Welcome back! Please login to your account.</p>
+    </div>
+    <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false" *ngIf="!skipLogin"><button mat-button (click)="openScanDialog()">scan</button></div>
+    <div fxLayout="column " style="width:100%" fxLayoutAlign="center center" [fxShow]="true" [fxHide]="false" *ngIf="skipLogin">
+      <form style="    width: 55%;">
+        <div fxLayout="column " fxLayoutGap="10px" fxLayoutAlign=" " [fxShow]="true" [fxHide]="false">
+          <div fxLayout="row " fxLayoutGap="5px" fxLayoutAlign="start center" [fxShow]="true" [fxHide]="false">
+            <div fxLayout="column " fxFlex="100" fxLayoutAlign=" " [fxShow]="true" [fxHide]="false">
+              <mat-form-field [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;">
+                <input matInput [(ngModel)]="user.username" name="user.username" placeholder="Username">
+
+              </mat-form-field>
+            </div>
+          </div>
+          <div fxLayout="row " fxLayoutGap="5px" fxLayoutAlign="start center">
+            <div fxLayout="column " fxFlex="100" fxLayoutAlign=" " [fxShow]="true" [fxHide]="false">
+              <mat-form-field [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;">
+                <input matInput [(ngModel)]="user.password" name="user.password" type="password" placeholder="Password">
+
+              </mat-form-field>
+            </div>
+          </div>
+          <div fxLayout="row " fxLayoutAlign="center center" [fxShow]="true" [fxHide]="false" *ngIf="!isMobile">
+            <mat-checkbox [(ngModel)]="user.remember" name="user.remember">Remember me?</mat-checkbox>
+          </div>
+          <div fxLayout="row " fxFlex="100" fxLayoutAlign="center center" [fxShow]="true" [fxHide]="false"><button mat-raised-button class="primary-red-btn" (click)="authenticate()">Login</button></div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
