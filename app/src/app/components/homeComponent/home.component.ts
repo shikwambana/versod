@@ -45,7 +45,7 @@ export class homeComponent extends NBaseComponent implements OnInit {
     }
 
     ngOnInit() {
-        this.username = this.ss.getValue('userObj').displayName
+        // this.username = this.ss.getValue('userObj').displayName
         // this.router.navigate(['/home']);
 
     }
