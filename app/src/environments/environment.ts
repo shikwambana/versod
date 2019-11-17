@@ -9,17 +9,27 @@ export const environment = {
         "namespace": "com.verses.verses",
         "isNotificationEnabled": true,
         "googleMapKey": "AIzaSyCSTnVwijjv0CFRA4MEeS-H6PAQc87LEoU",
-        "firebaseSenderId": "FIREBASE_SENDER_ID",
-        "firebaseAuthKey": "FIREBASE_AUTH_KEY",
-        "authDomain": "FIREBASE_AUTH_DOMAIN",
-        "databaseURL": "FIREBASE_DATABASE_URL",
-        "storageBucket": "FIREBASE_STORAGE_BUCKET",
+        "firebaseSenderId": "703440789363",
+        "firebaseAuthKey": "AIzaSyA2ihiXCazausSQNvRjjpK_MkIq_e_hNWw",
+        "authDomain": "versod.firebaseapp.com",
+        "databaseURL": "https://versod.firebaseio.com",
+        "storageBucket": "versod.appspot.com",
         "appDataSource": "verses",
         "appAuthenticationStrategy": "localAuth",
         "basicAuthUser": "username",
         "basicAuthPassword": "password",
         "useDefaultExceptionUI": true,
         "pushType": "FCM",
-        "modlerUrl": "http://104.248.148.247:1880/"
-    }
+        "modlerUrl": "http://104.248.148.247:1880/",
+        "appId": "1:703440789363:web:3041dfd883f445951e2f06"
+    },
+    firebaseConfig : {
+        apiKey: "AIzaSyA2ihiXCazausSQNvRjjpK_MkIq_e_hNWw",
+        authDomain: "versod.firebaseapp.com",
+        databaseURL: "https://versod.firebaseio.com",
+        projectId: "versod",
+        storageBucket: "versod.appspot.com",
+        messagingSenderId: "703440789363",
+        appId: "1:703440789363:web:3041dfd883f445951e2f06"
+      }
 }

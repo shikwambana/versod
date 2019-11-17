@@ -20,7 +20,8 @@
   </div>
 </div>
 <div fxLayout="column wrap" class="addname slideInUp" fxLayoutAlign="center center" [fxShow]="true" [fxHide]="false" *ngIf="!namePresent">
-  <div> What is your name?</div>
+  <div>
+    What is your name?</div>
   <div fxLayout="row wrap" fxLayoutAlign="space-between center" [fxShow]="true" [fxHide]="false">
     <mat-form-field [appearance]="&apos;standard&apos;" [floatLabel]="&apos;auto&apos;">
       <input matInput [(ngModel)]="name" required>

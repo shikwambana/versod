@@ -36,10 +36,14 @@
             "path": "verse"
         },
         {
+            "component": "saveComponent",
+            "path": "save"
+        },
+        {
             "path": "''",
             "component": "",
             "pathMatch": "full",
-            "redirectTo": "/home",
+            "redirectTo": "/verse",
             "resolve": "",
             "data": "",
             "canActivate": "",

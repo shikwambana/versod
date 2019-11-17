@@ -6,7 +6,7 @@ import { NDataModelService, NLogoutService, NSessionStorageService } from 'neutr
 import { NBaseComponent } from '../../../../../app/baseClasses/nBase.component';
 import { Router } from '@angular/router';
 import { MediaObserver  } from '@angular/flex-layout';
-
+import { HttpClient } from "@angular/common/http";
 /**
  * Service import Example :
  * import { HeroService } from '../services/hero/hero.service';
@@ -35,7 +35,8 @@ export class homeComponent extends NBaseComponent implements OnInit {
         private logoutservice: NLogoutService,
         private router: Router,
         public observableMedia: MediaObserver,
-        private ss: NSessionStorageService
+        private ss: NSessionStorageService,
+        private http : HttpClient
     ) {
         super();
         this.mm = new ModelMethods(bdms);
@@ -47,8 +48,7 @@ export class homeComponent extends NBaseComponent implements OnInit {
     ngOnInit() {
         // this.username = this.ss.getValue('userObj').displayName
         // this.router.navigate(['/home']);
-
-    }
+      }
 
     logout() {
         this.logoutservice.logout();

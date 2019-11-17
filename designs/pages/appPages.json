@@ -18,5 +18,10 @@
         "appPageName": "verse",
         "componentName": "verseComponent",
         "isEntry": false
+    },
+    "73a3c0e4-4f20-04bb-1498-eda1a2b1a200": {
+        "appPageName": "register",
+        "componentName": "registerComponent",
+        "isEntry": false
     }
 }

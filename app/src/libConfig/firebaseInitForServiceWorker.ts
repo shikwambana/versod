@@ -2,14 +2,15 @@ import { environment } from '../environments/environment.prod';
 import * as firebase from 'firebase';
 
 export function firebaseInitForServiceWorker() {
-    firebase.initializeApp({
-        'apiKey': environment.properties.firebaseAuthKey,
-        'authDomain': environment.properties.authDomain,
-        'databaseURL': environment.properties.databaseURL,
-        'storageBucket': environment.properties.storageBucket,
-        'messagingSenderId': environment.properties.firebaseSenderId
-    });
-
+    if (!firebase.apps.length) {
+        firebase.initializeApp({
+            'apiKey': environment.properties.firebaseAuthKey,
+            'authDomain': environment.properties.authDomain,
+            'databaseURL': environment.properties.databaseURL,
+            'storageBucket': environment.properties.storageBucket,
+            'messagingSenderId': environment.properties.firebaseSenderId
+        });
+    }
     const open = indexedDB.open('neutrinos_firebase_db', 1);
 
     open.onupgradeneeded = function () {

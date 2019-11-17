@@ -5,6 +5,9 @@ import { ModelMethods } from '../../lib/model.methods';
 import { NDataModelService } from 'neutrinos-seed-services';
 import { NBaseComponent } from '../../../../../app/baseClasses/nBase.component';
 import { apiService } from '../../services/api/api.service'
+import { HttpClient } from "@angular/common/http";
+import { firebaseService } from '../../services/firebase/firebase.service';
+
 /**
  * Service import Example :
  * import { HeroService } from '../../services/hero/hero.service';
@@ -22,15 +25,33 @@ export class verseComponent extends NBaseComponent implements OnInit {
     ref;
     namePresent = false;
     versesList = [];
+ coffeeOrders;
 
-    constructor(private bdms: NDataModelService, private api: apiService) {
+    constructor(private bdms: NDataModelService,
+        private api: apiService,
+        private fb: firebaseService,
+        private http: HttpClient) {
         super();
         this.mm = new ModelMethods(bdms);
     }
 
     ngOnInit() {
 
-        this.api.getVerses().then((res: []) =>{
+        // let fb = 'https://us-central1-versod.cloudfunctions.net/addMessage?text=testing6'
+        // this.http.post(fb, {}).subscribe(res => {
+        //     alert('got the info' + res)
+        //     console.log(res)
+        // });
+        this.getCoffeeOrders()
+       
+        // this.fb.addMessage({
+        //     "name": "Alphie",
+        //     "message": "test"
+        // }).then(res => {
+        //     console.log(res)
+        // })
+
+        this.api.getVerses().then((res: []) => {
             this.versesList = res;
             console.log(this.versesList)
         });
@@ -43,6 +64,12 @@ export class verseComponent extends NBaseComponent implements OnInit {
 
     }
 
+     getCoffeeOrders = () =>
+            this.fb
+                .getCoffeeOrders()
+                .subscribe(res => {this.coffeeOrders = res; console.log(res)});
+
+
     addVerse() {
         if (this.verse) {
 
@@ -50,7 +77,7 @@ export class verseComponent extends NBaseComponent implements OnInit {
                 verse: this.verse,
                 name: this.name,
                 date: new Date(),
-                ref : this.ref
+                ref: this.ref
             }
 
             this.versesList.unshift(verseObj);
