@@ -1,1 +1,18 @@
-<div>default page template</div>
+<div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false" fxFill>
+  <div fxLayout="column wrap" fxLayoutAlign="space-between center" [fxShow]="true" [fxHide]="false">
+    <form [formGroup]="registerForm">
+      <h1>
+        Register</h1>
+      <mat-form-field [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;">
+        <input matInput placeholder="Email Address" required formControlName="email">
+
+      </mat-form-field>
+      <mat-form-field [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;">
+        <input matInput placeholder="Password" required formControlName="password">
+
+      </mat-form-field>
+      <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false"><button mat-raised-button (click)="tryRegister(registerForm.value)">Register</button></div>
+    </form>
+    <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false"><button mat-raised-button (click)="tryGoogleLogin()">Register with Google</button></div>
+  </div>
+</div>

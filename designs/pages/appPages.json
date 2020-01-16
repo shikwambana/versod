@@ -23,5 +23,10 @@
         "appPageName": "register",
         "componentName": "registerComponent",
         "isEntry": false
+    },
+    "089e22de-e021-9620-a4b8-36d9092e0467": {
+        "appPageName": "log_in",
+        "componentName": "log_inComponent",
+        "isEntry": false
     }
 }

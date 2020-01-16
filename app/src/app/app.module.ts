@@ -5,12 +5,14 @@ import { appImportModules } from './config/import-modules';
 import { environment } from "environments/environment";
 import { AngularFireModule } from "@angular/fire";
 import { AngularFirestoreModule } from "@angular/fire/firestore";
+import { AngularFireAuthModule } from '@angular/fire/auth';
 
 @NgModule({
   declarations: [...appDeclarations],
   imports: [...appImportModules, 
     AngularFireModule.initializeApp(environment.firebaseConfig),
-    AngularFirestoreModule
+    AngularFirestoreModule,
+    AngularFireAuthModule
   ],
   providers: [...appProviders],
   entryComponents: [...appEntryComponents],

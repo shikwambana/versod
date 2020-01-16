@@ -22,9 +22,9 @@ export class verseComponent extends NBaseComponent implements OnInit {
     mm: ModelMethods;
     verse;
     name;
-    ref;
+    ref : string = '';
     namePresent = false;
-    versesList = [];
+    versesList : Array<any>;
  coffeeOrders;
 
     constructor(private bdms: NDataModelService,
@@ -37,24 +37,13 @@ export class verseComponent extends NBaseComponent implements OnInit {
 
     ngOnInit() {
 
-        // let fb = 'https://us-central1-versod.cloudfunctions.net/addMessage?text=testing6'
-        // this.http.post(fb, {}).subscribe(res => {
-        //     alert('got the info' + res)
-        //     console.log(res)
-        // });
-        this.getCoffeeOrders()
+         this.getCoffeeOrders()
        
-        // this.fb.addMessage({
-        //     "name": "Alphie",
-        //     "message": "test"
-        // }).then(res => {
-        //     console.log(res)
-        // })
 
-        this.api.getVerses().then((res: []) => {
-            this.versesList = res;
-            console.log(this.versesList)
-        });
+        // this.api.getVerses().then((res: []) => {
+        //     this.versesList = res;
+        //     console.log(this.versesList)
+        // });
 
         if (localStorage.getItem('name')) {
             this.namePresent = true;
@@ -67,7 +56,12 @@ export class verseComponent extends NBaseComponent implements OnInit {
      getCoffeeOrders = () =>
             this.fb
                 .getCoffeeOrders()
-                .subscribe(res => {this.coffeeOrders = res; console.log(res)});
+                .subscribe(res =>{
+                    this.versesList = res
+                    console.log(res)
+                }
+                    );
+                // .then(res => {this.coffeeOrders = res; console.log(res)});
 
 
     addVerse() {
@@ -81,7 +75,12 @@ export class verseComponent extends NBaseComponent implements OnInit {
             }
 
             this.versesList.unshift(verseObj);
-            this.api.addVerse(verseObj)
+            // this.api.addVerse(verseObj)
+            
+        this.fb.addMessage(verseObj).then(res => {
+        //  this.getCoffeeOrders()
+            console.log(res)
+        })
             this.verse = ''
         }
     }

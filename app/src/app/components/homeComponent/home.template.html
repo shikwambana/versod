@@ -2,7 +2,7 @@
   <mat-toolbar>
     <div fxLayout="row " fxFlex="100" fxLayoutAlign="space-between stretch" [fxShow]="true" [fxHide]="false">
       <div fxLayout="column wrap" fxFlex="5" fxLayoutAlign="center start" [fxShow]="true" [fxHide]="false" fxHide.gt-sm="true">
-        <mat-icon class="curs_point" (click)="sidenav.toggle()">menu</mat-icon>
+        <mat-icon style="color: #f5f5f5;;     pointer-events: none;" class="curs_point" (click)="sidenav.toggle()">menu</mat-icon>
       </div>
       <div fxLayout="column wrap" class="curs_point" fxFlex="10" fxLayoutAlign="start start" [fxShow]="true" [fxHide]="false" (click)="expandsidemenu = !expandsidemenu" fxHide.lt-md="true">
         <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false" *ngIf="!expandsidemenu"><img imgSrc="Web/Icons/toolbarLogo.png" class="logo_img_short"></div>
@@ -10,7 +10,7 @@
       </div>
       <div fxLayout="column wrap" fxFlex="80" fxLayoutAlign="center center" [fxShow]="true" [fxHide]="false" fxHide.gt-sm="true"><img imgSrc="Web/Versod logo 2.png" style="height: 140px;"></div>
       <div fxLayout="column wrap" fxFlex="10" fxLayoutAlign="center end" [fxShow]="true" [fxHide]="false">
-        <mat-icon class="curs_point" (click)="logout()">power_settings_new</mat-icon>
+        <mat-icon style="color: #f5f5f5;;     pointer-events: none;" class="curs_point" (click)="logout()">power_settings_new</mat-icon>
       </div>
     </div>
   </mat-toolbar>

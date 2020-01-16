@@ -1,0 +1,17 @@
+<div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false" fxFill>
+  <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
+    <form [formGroup]="loginForm">
+      <h1>
+        Login</h1>
+      <mat-form-field [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;">
+        <input matInput placeholder="Email" required formControlName="email">
+
+      </mat-form-field>
+      <mat-form-field [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;">
+        <input matInput placeholder="Password" required formControlName="password">
+
+      </mat-form-field>
+      <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false"><button mat-raised-button (click)="tryLogin(loginForm.value)">Login</button></div>
+    </form><button mat-raised-button (click)="tryGoogleLogin()">Login with Google</button>
+  </div>
+</div>

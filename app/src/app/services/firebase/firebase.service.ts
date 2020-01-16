@@ -33,7 +33,15 @@ export class firebaseService {
     }
 
     getCoffeeOrders() { 
-        return this.firestore.collection("messages").snapshotChanges();
+        return this.firestore.collection("messages", ref =>
+        ref.orderBy('date','desc')).snapshotChanges();
+
+        // this.firestore.collection('messages').get().toPromise().then(function(querySnapshot) {
+        //     querySnapshot.forEach(function(doc) {
+        //         // doc.data() is never undefined for query doc snapshots
+        //         console.log(doc);
+        //     });
+        // })
       }
 
 }

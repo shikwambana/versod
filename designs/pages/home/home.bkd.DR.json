@@ -272,7 +272,7 @@
                         "designerReference": [
                             {
                                 "_key": "style",
-                                "_value": "",
+                                "_value": "color: #f5f5f5;;     pointer-events: none;",
                                 "_type": "kv",
                                 "_attrDef": "p"
                             },
@@ -959,7 +959,7 @@
                         "designerReference": [
                             {
                                 "_key": "style",
-                                "_value": "",
+                                "_value": "color: #f5f5f5;;     pointer-events: none;",
                                 "_type": "kv",
                                 "_attrDef": "p"
                             },
@@ -2459,7 +2459,7 @@
                     "_key": "(onPositionChanged)",
                     "_value": "",
                     "_type": "kv",
-                    "_attrDef": "p"
+                    "_attrDef": "c"
                 },
                 {
                     "_key": "(openedChange)",
@@ -2481,6 +2481,12 @@
                 },
                 {
                     "_key": "fixedTopGap",
+                    "_value": "",
+                    "_type": "kv",
+                    "_attrDef": "p"
+                },
+                {
+                    "_key": "(positionChanged)",
                     "_value": "",
                     "_type": "kv",
                     "_attrDef": "p"

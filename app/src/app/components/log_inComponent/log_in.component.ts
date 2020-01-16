@@ -4,9 +4,10 @@ import { ModelMethods } from '../../lib/model.methods';
 // import { BDataModelService } from '../service/bDataModel.service';
 import { NDataModelService } from 'neutrinos-seed-services';
 import { NBaseComponent } from '../../../../../app/baseClasses/nBase.component';
-import { authService } from '../../services/auth/auth.service';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router, Params } from '@angular/router';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { authService } from '../../services/auth/auth.service';
+
 
 /**
  * Service import Example :
@@ -14,51 +15,46 @@ import { Router, Params } from '@angular/router';
  */
 
 @Component({
-    selector: 'bh-register',
-    templateUrl: './register.template.html'
+    selector: 'bh-log_in',
+    templateUrl: './log_in.template.html'
 })
 
-export class registerComponent extends NBaseComponent implements OnInit {
+export class log_inComponent extends NBaseComponent implements OnInit {
     mm: ModelMethods;
-    registerForm: FormGroup;
-    errorMessage: string;
-    successMessage: string;
+    loginForm: FormGroup;
+    errorMessage: string = '';
 
     constructor(private bdms: NDataModelService,
-        private authService: authService,
-        private fb: FormBuilder,
-        private router: Router) {
+        private router: Router,
+        public authService: authService,
+        private fb: FormBuilder) {
         super();
         this.mm = new ModelMethods(bdms);
     }
 
     ngOnInit() {
 
-        this.registerForm = this.fb.group({
+        this.loginForm = this.fb.group({
             email: ['', Validators.required],
             password: ['', Validators.required]
         });
+
     }
 
     tryGoogleLogin() {
         this.authService.doGoogleLogin()
             .then(res => {
-                console.log(res)
-                // this.router.navigate(['/user']);
-            }, err => console.log(err)
-            )
+                this.router.navigate(['/user']);
+            })
     }
 
-    tryRegister(value) {
-        this.authService.doRegister(value)
+    tryLogin(value) {
+        this.authService.doLogin(value)
             .then(res => {
-                console.log(res);
-                this.errorMessage = "";
-                this.successMessage = "Your account has been created";
+                this.router.navigate(['/user']);
             }, err => {
                 console.log(err);
                 this.errorMessage = err.message;
-                this.successMessage = "";
             })
     }
 

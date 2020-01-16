@@ -12,6 +12,14 @@ window['neutrinos'] = {
 }
 
 //CORE_REFERENCE_IMPORTS
+//CORE_REFERENCE_IMPORT-userService
+import { userService } from '../services/user/user.service';
+//CORE_REFERENCE_IMPORT-routeguardService
+import { routeguardService } from '../services/routeguard/routeguard.service';
+//CORE_REFERENCE_IMPORT-log_inComponent
+import { log_inComponent } from '../components/log_inComponent/log_in.component';
+//CORE_REFERENCE_IMPORT-authService
+import { authService } from '../services/auth/auth.service';
 //CORE_REFERENCE_IMPORT-registerComponent
 import { registerComponent } from '../components/registerComponent/register.component';
 //CORE_REFERENCE_IMPORT-firebaseService
@@ -66,6 +74,8 @@ export const appDeclarations = [
   PageNotFoundComponent,
   NMapComponent,
   //CORE_REFERENCE_PUSH_TO_DEC_ARRAY
+//CORE_REFERENCE_PUSH_TO_DEC_ARRAY-log_inComponent
+log_inComponent,
 //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-registerComponent
 registerComponent,
 //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-verseComponent
@@ -95,6 +105,12 @@ export const appProviders = [
   },
   NAuthGuardService,
   //CORE_REFERENCE_PUSH_TO_PRO_ARRAY
+//CORE_REFERENCE_PUSH_TO_PRO_ARRAY-userService
+userService,
+//CORE_REFERENCE_PUSH_TO_PRO_ARRAY-routeguardService
+routeguardService,
+//CORE_REFERENCE_PUSH_TO_PRO_ARRAY-authService
+authService,
 //CORE_REFERENCE_PUSH_TO_PRO_ARRAY-firebaseService
 firebaseService,
 //CORE_REFERENCE_PUSH_TO_PRO_ARRAY-apiService
@@ -110,5 +126,5 @@ defaultService,
 
 // CORE_REFERENCE_PUSH_TO_ROUTE_ARRAY_START
 export const appRoutes = [{path: 'home', component: homeComponent,
-children: [{path: '', component: verseComponent}]},{path: 'login', component: loginComponent},{path: 'unauthorized', redirectTo: '/login', pathMatch: 'full', resolve: NAuthGuardService},{path: 'verse', component: verseComponent},{path: 'save', component: saveComponent},{path: '', redirectTo: '/verse', pathMatch: 'full'},{path: '**', component: PageNotFoundComponent}]
+children: [{path: '', component: verseComponent}]},{path: 'login', component: log_inComponent},{path: 'unauthorized', redirectTo: '/login', pathMatch: 'full', resolve: NAuthGuardService},{path: 'verse', component: verseComponent},{path: 'register', component: registerComponent},{path: '', redirectTo: '/home', pathMatch: 'full'},{path: '**', component: PageNotFoundComponent}]
 // CORE_REFERENCE_PUSH_TO_ROUTE_ARRAY_END

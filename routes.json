@@ -17,7 +17,7 @@
         },
         {
             "path": "login",
-            "component": "loginComponent",
+            "component": "log_inComponent",
             "pathMatch": "",
             "redirectTo": "",
             "resolve": "",
@@ -36,14 +36,14 @@
             "path": "verse"
         },
         {
-            "component": "saveComponent",
-            "path": "save"
+            "path": "register",
+            "component": "registerComponent"
         },
         {
             "path": "''",
             "component": "",
             "pathMatch": "full",
-            "redirectTo": "/verse",
+            "redirectTo": "/home",
             "resolve": "",
             "data": "",
             "canActivate": "",
