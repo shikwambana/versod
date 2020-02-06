@@ -4,9 +4,9 @@ import { ModelMethods } from '../../lib/model.methods';
 // import { BDataModelService } from '../service/bDataModel.service';
 import { NDataModelService } from 'neutrinos-seed-services';
 import { NBaseComponent } from '../../../../../app/baseClasses/nBase.component';
-import { authService } from '../../services/auth/auth.service';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Router, Params } from '@angular/router';
+import { firebaseService } from '../../services/firebase/firebase.service';
+import { apiService } from '../../services/api/api.service'
+import { Router } from '@angular/router';
 
 /**
  * Service import Example :
@@ -14,55 +14,52 @@ import { Router, Params } from '@angular/router';
  */
 
 @Component({
-    selector: 'bh-register',
-    templateUrl: './register.template.html'
+    selector: 'bh-addverse',
+    templateUrl: './addverse.template.html'
 })
 
-export class registerComponent extends NBaseComponent implements OnInit {
+export class addverseComponent extends NBaseComponent implements OnInit {
     mm: ModelMethods;
-    registerForm: FormGroup;
-    errorMessage: string;
-    successMessage: string;
 
+    verse;
+    verseReason
+    name;
+    ref : string = '';
     constructor(private bdms: NDataModelService,
-        private authService: authService,
-        private fb: FormBuilder,
-        private router: Router) {
+        private router: Router,
+
+    private api: apiService,
+        private fb: firebaseService,) {
         super();
         this.mm = new ModelMethods(bdms);
     }
 
     ngOnInit() {
 
-        this.registerForm = this.fb.group({
-            email: ['', Validators.required],
-            password: ['', Validators.required]
-        });
     }
 
-    tryGoogleLogin() {
-        this.authService.doGoogleLogin()
-            .then(res => {
-                console.log(res)
-                sessionStorage.setItem('user',JSON.stringify(res))
-                this.router.navigate(['/home']);
-            }, err => console.log(err)
-            )
-    }
+    addVerse() {
+        if (this.verse) {
 
-    tryRegister(value) {
-        this.authService.doRegister(value)
-            .then(res => {
-                console.log(res);
-                this.errorMessage = "";
-                sessionStorage.setItem('user',JSON.stringify(res))
+            let verseObj = {
+                verse: this.verse,
+                reason: this.verseReason,
+                name: this.name,
+                date: new Date(),
+                ref: this.ref
+            }
+
+            // this.versesList.unshift(verseObj);
+            // this.api.addVerse(verseObj)
+            
+        this.fb.addMessage(verseObj).then(res => {
+        //  this.getCoffeeOrders()
+            console.log(res)
                 this.router.navigate(['/home']);
-                this.successMessage = "Your account has been created";
-            }, err => {
-                console.log(err);
-                this.errorMessage = err.message;
-                this.successMessage = "";
-            })
+
+        })
+            this.verse = ''
+        }
     }
 
     get(dataModelName, filter?, keys?, sort?, pagenumber?, pagesize?) {
@@ -117,7 +114,7 @@ export class registerComponent extends NBaseComponent implements OnInit {
             })
     }
 
-    delete(dataModelName, filter) {
+    delete (dataModelName, filter) {
         this.mm.delete(dataModelName, filter,
             result => {
                 // On Success code here

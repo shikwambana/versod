@@ -1,32 +1,32 @@
 <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
   <mat-toolbar>
     <div fxLayout="row " fxFlex="100" fxLayoutAlign="space-between stretch" [fxShow]="true" [fxHide]="false">
-      <div fxLayout="column wrap" fxFlex="5" fxLayoutAlign="center start" [fxShow]="true" [fxHide]="false" fxHide.gt-sm="true">
+      <div fxLayout="column wrap" fxFlex="5" fxLayoutAlign="center start" [fxShow]="true" [fxHide]="true" fxHide.gt-sm="true">
         <mat-icon style="color: #f5f5f5;;     pointer-events: none;" class="curs_point" (click)="sidenav.toggle()">menu</mat-icon>
       </div>
-      <div fxLayout="column wrap" class="curs_point" fxFlex="10" fxLayoutAlign="start start" [fxShow]="true" [fxHide]="false" (click)="expandsidemenu = !expandsidemenu" fxHide.lt-md="true">
+      <div fxLayout="column wrap" class="curs_point" fxFlex="10" fxLayoutAlign="start start" [fxShow]="true" [fxHide]="true" (click)="expandsidemenu = !expandsidemenu" fxHide.lt-md="true">
         <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false" *ngIf="!expandsidemenu"><img imgSrc="Web/Icons/toolbarLogo.png" class="logo_img_short"></div>
         <div fxLayout="column " fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false" *ngIf="expandsidemenu"><img imgSrc="Web/Icons/toolbarLogo.png" class="logo_img_full"></div>
       </div>
-      <div fxLayout="column wrap" fxFlex="80" fxLayoutAlign="center center" [fxShow]="true" [fxHide]="false" fxHide.gt-sm="true"><img imgSrc="Web/Versod logo 2.png" style="height: 140px;"></div>
+      <div fxLayout="column wrap" fxFlex="95" fxLayoutAlign="center center" [fxShow]="true" [fxHide]="false" fxHide.gt-sm="true"><img imgSrc="Web/Versod logo 3.png" routerLink="[&apos;./home&apos;]"></div>
       <div fxLayout="column wrap" fxFlex="10" fxLayoutAlign="center end" [fxShow]="true" [fxHide]="false">
-        <mat-icon style="color: #f5f5f5;;     pointer-events: none;" class="curs_point" (click)="logout()">power_settings_new</mat-icon>
+        <mat-icon style="color: rgb(128, 110, 110);     " class="curs_point" (click)="logout()">power_settings_new</mat-icon>
       </div>
     </div>
   </mat-toolbar>
 </div>
 <mat-sidenav-container style="margin-top:56px;padding-bottom:30px" fullscreen>
   <div fxLayout="row " fxFlex="100" fxLayoutAlign="  none" [fxShow]="true" [fxHide]="false" fxFill>
-    <div fxLayout="row wrap" style="color:#fff;border-top: 1px solid #fff;" class="sidenav" fxLayoutAlign="center stretch" [fxShow]="true" [fxHide]="false" fxHide.lt-md="true" [ngClass]="expandsidemenu? &apos;width_2&apos; : &apos;width_1&apos;">
-      <div fxLayout="column wrap" class="sidenav" fxLayoutGap=".8em" fxLayoutAlign="start center" [fxShow]="true" [fxHide]="false">
+    <div fxLayout="row wrap" fxLayoutAlign="center stretch" [fxShow]="true" [fxHide]="false" fxHide.lt-md="true" [ngClass]="expandsidemenu? &apos;width_2&apos; : &apos;width_1&apos;">
+      <div fxLayout="column wrap" fxLayoutGap=".8em" fxLayoutAlign="start center" [fxShow]="true" [fxHide]="false">
         <div fxLayout="column " fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
-          <div fxLayout="column wrap" fxLayoutAlign="center center" [fxShow]="true" [fxHide]="false"><img imgSrc="Web/Icons/Group 1457.png"></div>
-          <div fxLayout="column wrap" fxLayoutAlign="center center" [fxShow]="true" [fxHide]="false">
+          <div fxLayout="column wrap" fxLayoutAlign="center center" [fxShow]="true" [fxHide]="false"><img imgSrc="Web/Versod logo 3.png"></div>
+          <div fxLayout="column wrap" fxLayoutAlign="center center" [fxShow]="true" [fxHide]="true">
             <p class="margin_0">Neutrinos</p>
             <p class="margin_0">{{username}}</p>
           </div>
         </div>
-        <div fxLayout="column wrap" style="width:85%;" fxLayoutAlign="center center" [fxShow]="true" [fxHide]="false">
+        <div fxLayout="column wrap" style="width:85%;" fxLayoutAlign="center center" [fxShow]="true" [fxHide]="true">
           <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
             <div fxLayout="column wrap" fxLayoutAlign="center center" [fxShow]="true" [fxHide]="false">
               <div fxLayout="row " class="sidenav_menu" fxLayoutAlign="start center" [fxShow]="true" [fxHide]="false" [ngClass]="(i==selectedIndex)? &apos;active&apos; : &apos;&apos;" *ngFor="let menu of menus; let i = index;" (click)="onclick(menu, i)">

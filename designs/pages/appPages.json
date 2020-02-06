@@ -28,5 +28,10 @@
         "appPageName": "log_in",
         "componentName": "log_inComponent",
         "isEntry": false
+    },
+    "c84d036f-bfd9-da07-f1e0-49eb861a2210": {
+        "appPageName": "addVerse",
+        "componentName": "addverseComponent",
+        "isEntry": false
     }
 }

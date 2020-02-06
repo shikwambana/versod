@@ -255,7 +255,7 @@
                         },
                         {
                             "_key": "[fxHide]",
-                            "_value": "false",
+                            "_value": "true",
                             "_type": "kv",
                             "_attrDef": "p"
                         },
@@ -378,7 +378,7 @@
                         },
                         {
                             "_key": "[fxHide]",
-                            "_value": "false",
+                            "_value": "true",
                             "_type": "kv",
                             "_attrDef": "p"
                         },
@@ -753,7 +753,7 @@
                         },
                         {
                             "_key": "fxFlex",
-                            "_value": "80",
+                            "_value": "95",
                             "_type": "kv",
                             "_attrDef": "p"
                         },
@@ -813,7 +813,7 @@
                             },
                             {
                                 "_key": "style",
-                                "_value": "height: 140px;",
+                                "_value": "",
                                 "_type": "kv",
                                 "_attrDef": "p"
                             },
@@ -825,7 +825,7 @@
                             },
                             {
                                 "_key": "imgSrc",
-                                "_value": "Web/Versod logo 2.png",
+                                "_value": "Web/Versod logo 3.png",
                                 "_type": "kv",
                                 "_attrDef": "p"
                             },
@@ -876,6 +876,12 @@
                                 "_value": "",
                                 "_type": "kv",
                                 "_attrDef": "p"
+                            },
+                            {
+                                "_key": "routerLink",
+                                "_value": "['./home']",
+                                "_type": "kv",
+                                "_attrDef": "c"
                             }
                         ]
                     }
@@ -959,7 +965,7 @@
                         "designerReference": [
                             {
                                 "_key": "style",
-                                "_value": "color: #f5f5f5;;     pointer-events: none;",
+                                "_value": "color: rgb(128, 110, 110);     ",
                                 "_type": "kv",
                                 "_attrDef": "p"
                             },
@@ -1139,13 +1145,13 @@
                     },
                     {
                         "_key": "style",
-                        "_value": "color:#fff;border-top: 1px solid #fff;",
+                        "_value": "",
                         "_type": "kv",
                         "_attrDef": "p"
                     },
                     {
                         "_key": "class",
-                        "_value": "sidenav",
+                        "_value": "",
                         "_type": "kv",
                         "_attrDef": "p"
                     },
@@ -1223,7 +1229,7 @@
                         },
                         {
                             "_key": "class",
-                            "_value": "sidenav",
+                            "_value": "",
                             "_type": "kv",
                             "_attrDef": "p"
                         },
@@ -1427,7 +1433,7 @@
                                     },
                                     {
                                         "_key": "imgSrc",
-                                        "_value": "Web/Icons/Group 1457.png",
+                                        "_value": "Web/Versod logo 3.png",
                                         "_type": "kv",
                                         "_attrDef": "p"
                                     },
@@ -1543,7 +1549,7 @@
                                 },
                                 {
                                     "_key": "[fxHide]",
-                                    "_value": "false",
+                                    "_value": "true",
                                     "_type": "kv",
                                     "_attrDef": "p"
                                 }
@@ -1673,7 +1679,7 @@
                             },
                             {
                                 "_key": "[fxHide]",
-                                "_value": "false",
+                                "_value": "true",
                                 "_type": "kv",
                                 "_attrDef": "p"
                             }

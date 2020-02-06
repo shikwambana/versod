@@ -51,7 +51,8 @@ export class homeComponent extends NBaseComponent implements OnInit {
       }
 
     logout() {
-        this.logoutservice.logout();
+        // this.logoutservice.logout();
+        sessionStorage.removeItem('user')
         this.router.navigate(['/login']);
     }
 

@@ -1,0 +1,18 @@
+<div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false" fxFill>
+  <div fxLayout="column wrap" style="margin: 40px auto" class=" slideInUp registerBox" fxLayoutAlign="center stretch" [fxShow]="true" [fxHide]="false">
+    <div fxLayout="row wrap" fxLayoutAlign="space-between center" [fxShow]="true" [fxHide]="false">
+      <div fxLayout="column " style="    width: 100%;" fxLayoutAlign="center stretch" [fxShow]="true" [fxHide]="false">
+        <mat-form-field>
+          <textarea matInput [(ngModel)]="verse" (keyup.enter)="addVerse()" placeholder="Add Verse" required></textarea>
+        </mat-form-field>
+        <mat-form-field>
+          <textarea matInput [(ngModel)]="verseReason" (keyup.enter)="addVerse()" placeholder="Why do you like this Verse?" required></textarea>
+        </mat-form-field>
+        <mat-form-field [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;">
+          <input matInput [(ngModel)]="name" placeholder="Name" required>
+
+        </mat-form-field><button mat-raised-button style="color:white;background:red;" (keyup.enter)="addVerse()" (click)="addVerse()">Add</button>
+      </div>
+    </div>
+  </div>
+</div>

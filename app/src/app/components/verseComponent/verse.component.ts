@@ -7,7 +7,8 @@ import { NBaseComponent } from '../../../../../app/baseClasses/nBase.component';
 import { apiService } from '../../services/api/api.service'
 import { HttpClient } from "@angular/common/http";
 import { firebaseService } from '../../services/firebase/firebase.service';
-
+import { Router } from '@angular/router';
+import { defaultService } from "../../services/default/default.service";
 /**
  * Service import Example :
  * import { HeroService } from '../../services/hero/hero.service';
@@ -22,12 +23,14 @@ export class verseComponent extends NBaseComponent implements OnInit {
     mm: ModelMethods;
     verse;
     name;
-    ref : string = '';
+    ref: string = '';
     namePresent = false;
-    versesList : Array<any>;
- coffeeOrders;
+    versesList: Array<any>;
+    coffeeOrders;
 
     constructor(private bdms: NDataModelService,
+        private router: Router,
+        private comm: defaultService,
         private api: apiService,
         private fb: firebaseService,
         private http: HttpClient) {
@@ -37,8 +40,8 @@ export class verseComponent extends NBaseComponent implements OnInit {
 
     ngOnInit() {
 
-         this.getCoffeeOrders()
-       
+        this.getCoffeeOrders()
+
 
         // this.api.getVerses().then((res: []) => {
         //     this.versesList = res;
@@ -53,17 +56,24 @@ export class verseComponent extends NBaseComponent implements OnInit {
 
     }
 
-     getCoffeeOrders = () =>
-            this.fb
-                .getCoffeeOrders()
-                .subscribe(res =>{
-                    this.versesList = res
-                    console.log(res)
-                }
-                    );
-                // .then(res => {this.coffeeOrders = res; console.log(res)});
+    getCoffeeOrders = () =>
+        this.fb
+            .getCoffeeOrders()
+            .subscribe(res => {
+                this.versesList = res
+                console.log(res)
+            }
+            );
+    // .then(res => {this.coffeeOrders = res; console.log(res)});
 
-
+    checkLogin() {
+        if (sessionStorage.getItem('user')) {
+            this.router.navigate(['/home/addverse']);
+        } else {
+            this.comm.alertsnackbar("Please Log In", "close")
+            this.router.navigate(['/login']);
+        }
+    }
     addVerse() {
         if (this.verse) {
 
@@ -76,11 +86,11 @@ export class verseComponent extends NBaseComponent implements OnInit {
 
             this.versesList.unshift(verseObj);
             // this.api.addVerse(verseObj)
-            
-        this.fb.addMessage(verseObj).then(res => {
-        //  this.getCoffeeOrders()
-            console.log(res)
-        })
+
+            this.fb.addMessage(verseObj).then(res => {
+                //  this.getCoffeeOrders()
+                console.log(res)
+            })
             this.verse = ''
         }
     }

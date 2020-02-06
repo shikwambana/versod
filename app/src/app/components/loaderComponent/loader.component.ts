@@ -21,19 +21,21 @@ export class loaderComponent extends NBaseComponent implements OnInit {
     showLoader = true;
     constructor(private bdms: NDataModelService,
         private dialog: MatDialog,
-        private router:Router,
-        @Inject(MAT_DIALOG_DATA) public data) {
+        private router:Router
+        // @Inject(MAT_DIALOG_DATA) public data
+        ) {
         super();
         this.mm = new ModelMethods(bdms);
     }
 
 
     ngOnInit() {
-        if (this.data.message === "Authenticating") {
-            console.log("Authenticating");
-        } else {
-            this.showLoader = false;
-        }
+
+        // if (this.data.message === "Authenticating") {
+        //     console.log("Authenticating");
+        // } else {
+        //     this.showLoader = false;
+        // }
 
     }
 

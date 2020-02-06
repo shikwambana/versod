@@ -1,0 +1,13 @@
+{
+    "appPageId": "c84d036f-bfd9-da07-f1e0-49eb861a2210",
+    "appPageName": "addVerse",
+    "componentName": "addverseComponent",
+    "selectorName": "bh-addverse",
+    "htmlFileName": "addverse.template.html",
+    "tsFileName": "addverse.component.ts",
+    "bkd": {
+        "designerHtml": "",
+        "designerReference": {},
+        "ts": ""
+    }
+}

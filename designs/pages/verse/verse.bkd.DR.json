@@ -419,7 +419,7 @@
                             },
                             {
                                 "_key": "html",
-                                "_value": "<div class=\"sbl-pushing-shapes\">\r\n                    <div></div>\r\n                    <div></div>\r\n                </div>\r\n                    <div class=\"loading\"><p>Loading...</p></div>\r\n",
+                                "_value": "<div class=\"spinner\">\r\n",
                                 "_type": "a",
                                 "_attrDef": "p"
                             }
@@ -494,7 +494,7 @@
                     },
                     {
                         "_key": "*ngIf",
-                        "_value": "versesList.length === 0",
+                        "_value": "!versesList",
                         "_type": "kv",
                         "_attrDef": "c"
                     }
@@ -1014,7 +1014,7 @@
                             },
                             {
                                 "_key": "html",
-                                "_value": "<p style=\"margin: 0;\r\n    font-size: 10px;\r\n    text-align: right;\">{{verse.payload.doc.data().date.toDate() | date : 'medium'}} | {{verse.payload.doc.data().name}}</p>",
+                                "_value": "<p style=\"margin: 0;\r\n    font-size: 10px;\r\n    text-align: right;\r\n    padding-right: 5px;\">{{verse.payload.doc.data().date.toDate() | date : 'medium'}} | {{verse.payload.doc.data().name}}</p>",
                                 "_type": "a",
                                 "_attrDef": "p"
                             }
@@ -1083,7 +1083,7 @@
                     },
                     {
                         "_key": "[fxHide]",
-                        "_value": "false",
+                        "_value": "true",
                         "_type": "kv",
                         "_attrDef": "p"
                     }
@@ -1363,6 +1363,133 @@
                     }
                 }
             }
+        }
+    },
+    "4a3ffd88-8aa7-e264-632b-d30042cd7b2e": {
+        "paletteKey": "FlexLayoutCol",
+        "designerReference": [
+            {
+                "_key": "componentLabel",
+                "_value": "Column",
+                "_type": "kv",
+                "_attrDef": "p",
+                "_useAsLabel": true
+            },
+            {
+                "_key": "style",
+                "_value": "",
+                "_type": "kv",
+                "_attrDef": "p"
+            },
+            {
+                "_key": "class",
+                "_value": "fab slideInUp",
+                "_type": "kv",
+                "_attrDef": "p"
+            },
+            {
+                "_key": "fxFlex",
+                "_value": "",
+                "_type": "kv",
+                "_attrDef": "p"
+            },
+            {
+                "_key": "fxLayoutGap",
+                "_value": "",
+                "_type": "kv",
+                "_attrDef": "p"
+            },
+            {
+                "_key": "wrap",
+                "_value": "wrap",
+                "_type": "a",
+                "_attrDef": "p"
+            },
+            {
+                "_key": "layoutAlign",
+                "_value": "start",
+                "_type": "a",
+                "_attrDef": "p"
+            },
+            {
+                "_key": "pLayoutAlign",
+                "_value": "stretch",
+                "_type": "a",
+                "_attrDef": "p"
+            },
+            {
+                "_key": "[fxShow]",
+                "_value": "true",
+                "_type": "kv",
+                "_attrDef": "p"
+            },
+            {
+                "_key": "[fxHide]",
+                "_value": "false",
+                "_type": "kv",
+                "_attrDef": "p"
+            }
+        ],
+        "65489eb1-6875-3719-ccb8-7efe8fed5c7e": {
+            "paletteKey": "NG-MiniFabButton",
+            "parentEditorKey": "4a3ffd88-8aa7-e264-632b-d30042cd7b2e",
+            "designerReference": [
+                {
+                    "_key": "style",
+                    "_value": "",
+                    "_type": "kv",
+                    "_attrDef": "p"
+                },
+                {
+                    "_key": "class",
+                    "_value": "",
+                    "_type": "kv",
+                    "_attrDef": "p"
+                },
+                {
+                    "_key": "fabicon",
+                    "_value": "add",
+                    "_type": "a",
+                    "_attrDef": "p",
+                    "_useAsLabel": true
+                },
+                {
+                    "_key": "color",
+                    "_value": "",
+                    "_type": "kv",
+                    "_attrDef": "p"
+                },
+                {
+                    "_key": "(click)",
+                    "_value": "checkLogin()",
+                    "_type": "kv",
+                    "_attrDef": "p"
+                },
+                {
+                    "_key": "[disabled]",
+                    "_value": "",
+                    "_type": "kv",
+                    "_attrDef": "p"
+                },
+                {
+                    "_key": "[disableRipple]",
+                    "_value": "",
+                    "_type": "kv",
+                    "_attrDef": "p"
+                },
+                {
+                    "_key": "type",
+                    "_value": "",
+                    "_type": "kv",
+                    "_attrDef": "p"
+                },
+                {
+                    "_key": "routerLink",
+                    "_value": "",
+                    "_type": "kv",
+                    "_attrDef": "p"
+                }
+            ]
         }
     },
     "197bd203-7259-2beb-5a3a-c5cea33060dd": {

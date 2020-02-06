@@ -7,6 +7,10 @@ import { NBaseComponent } from '../../../../../app/baseClasses/nBase.component';
 import { Router, Params } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { authService } from '../../services/auth/auth.service';
+import { defaultService } from "../../services/default/default.service";
+import { NHTTPLoaderService } from 'neutrinos-seed-services';
+import { MatDialog } from '@angular/material';
+import { loaderComponent } from '../loaderComponent/loader.component';
 
 
 /**
@@ -23,10 +27,14 @@ export class log_inComponent extends NBaseComponent implements OnInit {
     mm: ModelMethods;
     loginForm: FormGroup;
     errorMessage: string = '';
+    httpSubscribe: any;
 
     constructor(private bdms: NDataModelService,
         private router: Router,
         public authService: authService,
+        private httpLoaderService: NHTTPLoaderService,
+        private dialog: MatDialog,
+        private comm: defaultService,
         private fb: FormBuilder) {
         super();
         this.mm = new ModelMethods(bdms);
@@ -39,19 +47,37 @@ export class log_inComponent extends NBaseComponent implements OnInit {
             password: ['', Validators.required]
         });
 
+        this.httpSubscribe = this.httpLoaderService._isHTTPRequestInProgress$.subscribe(value => {
+            if (value === true) {
+                this.openDialog();
+            } else {
+                this.dialog.closeAll();
+            }
+        });
+    }
+
+     openDialog() {
+        const dialogRef = this.dialog.open(loaderComponent, {
+            data: { message: 'Authenticating' },
+            width: '250px',
+            disableClose: true
+        });
     }
 
     tryGoogleLogin() {
+
         this.authService.doGoogleLogin()
             .then(res => {
-                this.router.navigate(['/user']);
+                sessionStorage.setItem('user',JSON.stringify(res))
+                this.router.navigate(['/home']);
             })
     }
 
     tryLogin(value) {
         this.authService.doLogin(value)
             .then(res => {
-                this.router.navigate(['/user']);
+                sessionStorage.setItem('user',JSON.stringify(res))
+                this.router.navigate(['/home']);
             }, err => {
                 console.log(err);
                 this.errorMessage = err.message;

@@ -12,6 +12,8 @@ window['neutrinos'] = {
 }
 
 //CORE_REFERENCE_IMPORTS
+//CORE_REFERENCE_IMPORT-addverseComponent
+import { addverseComponent } from '../components/addverseComponent/addverse.component';
 //CORE_REFERENCE_IMPORT-userService
 import { userService } from '../services/user/user.service';
 //CORE_REFERENCE_IMPORT-routeguardService
@@ -74,6 +76,8 @@ export const appDeclarations = [
   PageNotFoundComponent,
   NMapComponent,
   //CORE_REFERENCE_PUSH_TO_DEC_ARRAY
+//CORE_REFERENCE_PUSH_TO_DEC_ARRAY-addverseComponent
+addverseComponent,
 //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-log_inComponent
 log_inComponent,
 //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-registerComponent
@@ -126,5 +130,5 @@ defaultService,
 
 // CORE_REFERENCE_PUSH_TO_ROUTE_ARRAY_START
 export const appRoutes = [{path: 'home', component: homeComponent,
-children: [{path: '', component: verseComponent}]},{path: 'login', component: log_inComponent},{path: 'unauthorized', redirectTo: '/login', pathMatch: 'full', resolve: NAuthGuardService},{path: 'verse', component: verseComponent},{path: 'register', component: registerComponent},{path: '', redirectTo: '/home', pathMatch: 'full'},{path: '**', component: PageNotFoundComponent}]
+children: [{path: '', component: verseComponent},{path: 'addverse', component: addverseComponent}]},{path: 'login', component: log_inComponent},{path: 'unauthorized', redirectTo: '/login', pathMatch: 'full', resolve: NAuthGuardService},{path: 'verse', component: verseComponent},{path: 'register', component: registerComponent},{path: '', redirectTo: '/home', pathMatch: 'full'},{path: '**', component: PageNotFoundComponent}]
 // CORE_REFERENCE_PUSH_TO_ROUTE_ARRAY_END

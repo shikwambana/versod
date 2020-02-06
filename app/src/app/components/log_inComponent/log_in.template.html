@@ -1,17 +1,24 @@
-<div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false" fxFill>
-  <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
-    <form [formGroup]="loginForm">
-      <h1>
-        Login</h1>
-      <mat-form-field [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;">
-        <input matInput placeholder="Email" required formControlName="email">
+<div fxLayout="row wrap" class="bgColor" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false" fxFill>
+  <div fxLayout="column wrap" fxLayoutAlign="  stretch" [fxShow]="true" [fxHide]="false">
+    <div fxLayout="column wrap" style="margin: 20px 0; " fxLayoutAlign="center center" [fxShow]="true" [fxHide]="false"><img imgSrc="Web/Versod logo 3.png" style="width: 200px;"></div>
+    <div fxLayout="column wrap" style="    text-align: center;" class="registerBox fadeIn" fxLayoutAlign="center center" [fxShow]="true" [fxHide]="false">
+      <form [formGroup]="loginForm">
+        <mat-form-field [appearance]="&apos;outline&apos;" [floatLabel]="&apos;auto&apos;">
+          <input matInput placeholder="Email Address" required formControlName="email">
 
-      </mat-form-field>
-      <mat-form-field [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;">
-        <input matInput placeholder="Password" required formControlName="password">
+        </mat-form-field>
+        <mat-form-field [appearance]="&apos;outline&apos;" [floatLabel]="&apos;auto&apos;">
+          <input matInput placeholder="Password" required formControlName="password">
 
-      </mat-form-field>
-      <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false"><button mat-raised-button (click)="tryLogin(loginForm.value)">Login</button></div>
-    </form><button mat-raised-button (click)="tryGoogleLogin()">Login with Google</button>
+        </mat-form-field>
+        <div fxLayout="column wrap" fxLayoutAlign="center stretch" [fxShow]="true" [fxHide]="false"><button mat-raised-button style="    background: red;     color: white;" (click)="tryLogin(loginForm.value)">Log In</button></div>
+        <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
+          <div>
+            <p>Don&apos;t have an account? <a routerLink="/register" style="color:red; text-decoration: none;">Register</a></p>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div fxLayout="column wrap" style="    margin: 20px 50px;" fxLayoutAlign="center center" [fxShow]="true" [fxHide]="false"><button mat-raised-button class="registerBox" (click)="tryGoogleLogin()">Login with Google</button></div>
   </div>
 </div>

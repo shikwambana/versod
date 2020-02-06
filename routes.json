@@ -12,6 +12,10 @@
                 {
                     "component": "verseComponent",
                     "path": "''"
+                },
+                {
+                    "path": "addverse",
+                    "component": "addverseComponent"
                 }
             ]
         },

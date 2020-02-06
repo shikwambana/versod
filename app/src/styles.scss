@@ -4,6 +4,9 @@
 @import "nDefaults.scss";
 @import url('https://fonts.googleapis.com/css?family=Asap&display=swap');
 
+$primary : red;
+$white : white;
+
 .login-card .mat-card-image:first-child {
     margin-top:0 !important
 }
@@ -124,6 +127,37 @@ width:200px
 
 .verseView {
     padding: 10px 15px;
+    border-radius: 24px;
+background: #ffffff;
+box-shadow: 0px 0px 14px #e0e0e0, 
+            -7px -7px 14px #ffffff;
+        margin: 10px;
+}
+
+.fab {
+    position: fixed;
+    z-index: 5;
+    right: 20px;
+    bottom: 20px;
+}
+
+.fab button {
+    background-color: red !important;
+    color: white !important;
+}
+  
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.fadeIn {
+  animation: fadeIn 1s;
 }
 
 @keyframes fadeInDown {
@@ -164,61 +198,86 @@ width:200px
     top: 35%;
     z-index: 1;
 }
+
+.bgColor {
+    background-image: linear-gradient(to bottom , $white, $primary);
+}
+
+.registerBox {
+    background-color: white;
+    border-radius: 0.2em;
+    box-shadow: inset 0.007em 0.007em 0.034em rgb(255, 0, 0), 
+                0.0503em 0.0503em 1.135em rgba(187, 21, 21, 0.89), 
+                -0.0503em -0.0503em 0.135em #fff;
+	border: 0.004em solid rgba(#fff, 0.3);
+    width: 80%;
+    padding: 20px;
+    margin: 0 auto;
+}
+
+.mat-form-field-appearance-outline .mat-form-field-infix {
+    padding: 0em 0 1em 0 !important;
+}
 //loader 
 //===============================================================
-.loading {
-    height: 70px;
-    width: 70px;
-    color: #5a5a5a;
-    position: absolute;
-    left: 40%;
-    top: 46%;
-    z-index: 1;
+
+.spinner {
+  position: relative;
+  margin: auto;
+  box-sizing: border-box;
+  background-clip: padding-box;
+  width: 200px;
+  height: 200px;
+  border-radius: 100px;
+  border: 4px solid rgba(255, 255, 255, 0.1);
+  -webkit-mask: linear-gradient(rgba(0, 0, 0, 0.1), #000000 90%);
+  transform-origin: 50% 60%;
+  transform: perspective(200px) rotateX(66deg);
+  animation: spinner-wiggle 1.2s infinite;
 }
-.sbl-pushing-shapes {
-    height: 70px;
-    width: 70px;
-    color: #5a5a5a;
-    position: absolute;
-    left: 40%;
-    top: 35%;
-    z-index: 1;
-    display: inline-block;
-    overflow: hidden;
-    box-sizing: border-box;
-    animation: rotate 3s ease-in-out infinite; }
-    .sbl-pushing-shapes div {
-      color: inherit;
-      height: 24px;
-      width: 24px;
-      position: absolute;
-      left: 60px;
-      top: 12px;
-      box-sizing: border-box;
-      border: 3px solid;
-      animation: moving-shapes 2s linear infinite; }
-      .sbl-pushing-shapes div:nth-child(1) {
-        border-radius: 50%;
-        animation-delay: 0s; }
-      .sbl-pushing-shapes div:nth-child(2) {
-        transform: rotate(45deg);
-        animation-delay: 1s; }
-  
-  @keyframes moving-shapes {
-    0% {
-      left: 60px; }
-    50% {
-      left: 5px; }
-    60% {
-      left: 12px;
-      transform: rotate(135deg); }
-    70% {
-      left: 17px; }
-    100% {
-      left: -24px; } }
-  
-  @keyframes rotate {
-    0% {
-      transform: rotate(0); }
-    100% {
-      transform: rotate(360deg); } }
+.spinner:before,
+.spinner:after {
+  content: "";
+  position: absolute;
+  margin: -4px;
+  box-sizing: inherit;
+  width: inherit;
+  height: inherit;
+  border-radius: inherit;
+  opacity: .05;
+  border: inherit;
+  border-color: transparent;
+  animation: spinner-spin 1.2s cubic-bezier(0.6, 0.2, 0, 0.8) infinite, spinner-fade 1.2s linear infinite;
+}
+
+.spinner:before {
+  border-top-color: #66e6ff;
+}
+
+.spinner:after {
+  border-top-color: #f0db75;
+  animation-delay: 0.3s;
+}
+
+@keyframes spinner-spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes spinner-fade {
+  20% {
+    opacity: .1;
+  }
+  40% {
+    opacity: 1;
+  }
+  60% {
+    opacity: .1;
+  }
+}
+
+@media (max-width: 599px){
+.mat-toolbar-row, .mat-toolbar-single-row {
+    height: 65px !important;
+}
+}
