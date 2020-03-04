@@ -1025,7 +1025,7 @@
             },
             {
                 "_key": "style",
-                "_value": "margin-top:56px;padding-bottom:30px",
+                "_value": "margin-top:56px;",
                 "_type": "kv",
                 "_attrDef": "p"
             },

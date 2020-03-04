@@ -27,6 +27,7 @@ export class verseComponent extends NBaseComponent implements OnInit {
     namePresent = false;
     versesList: Array<any>;
     coffeeOrders;
+    message: any;
 
     constructor(private bdms: NDataModelService,
         private router: Router,
@@ -39,7 +40,13 @@ export class verseComponent extends NBaseComponent implements OnInit {
     }
 
     ngOnInit() {
+        const userId = 'user001';
 
+        this.fb.requestPermission(userId)
+    this.fb.receiveMessage()
+    this.message = this.fb.currentMessage
+  
+  
         this.getCoffeeOrders()
 
 
