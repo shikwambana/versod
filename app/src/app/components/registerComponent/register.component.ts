@@ -7,6 +7,8 @@ import { NBaseComponent } from '../../../../../app/baseClasses/nBase.component';
 import { authService } from '../../services/auth/auth.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router, Params } from '@angular/router';
+import { MatDialog } from '@angular/material';
+import { loaderComponent } from '../loaderComponent/loader.component';
 
 /**
  * Service import Example :
@@ -27,6 +29,7 @@ export class registerComponent extends NBaseComponent implements OnInit {
     constructor(private bdms: NDataModelService,
         private authService: authService,
         private fb: FormBuilder,
+        private dialog: MatDialog,
         private router: Router) {
         super();
         this.mm = new ModelMethods(bdms);
@@ -40,13 +43,22 @@ export class registerComponent extends NBaseComponent implements OnInit {
         });
     }
 
+    openDialog() {
+        const dialogRef = this.dialog.open(loaderComponent, {
+            data: { message: 'Authenticating' },
+            width: '250px',
+            disableClose: true
+        });
+    }
+
+
     tryGoogleLogin() {
         this.authService.doGoogleLogin()
             .then(res => {
                 console.log(res)
                 sessionStorage.setItem('user',JSON.stringify(res))
                 this.router.navigate(['/home']);
-            }, err => console.log(err)
+            }, err => alert(err.message)
             )
     }
 
@@ -60,6 +72,7 @@ export class registerComponent extends NBaseComponent implements OnInit {
                 this.successMessage = "Your account has been created";
             }, err => {
                 console.log(err);
+                alert(err.message)
                 this.errorMessage = err.message;
                 this.successMessage = "";
             })

@@ -1,5 +1,5 @@
 <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false" fxFill *ngIf="namePresent">
-  <div fxLayout="column wrap" fxFlex="100" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
+  <div fxLayout="column wrap" fxFlex="100" fxFlex.gt-xs="80" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
     <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false" *ngIf="!versesList">
       <div>
         <div class="spinner">
@@ -8,9 +8,9 @@
     </div>
     <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false" *ngIf="!versesList">
       <div>
-        <div class="noData">
+        <!-- <div class="noData">
           <p>Add Something below</p>
-        </div>
+        </div> -->
         <div class="noData">
           <p>{{verse}}</p>
         </div>

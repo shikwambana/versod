@@ -74,12 +74,16 @@ export class log_inComponent extends NBaseComponent implements OnInit {
     }
 
     tryLogin(value) {
+        this.openDialog()
         this.authService.doLogin(value)
             .then(res => {
+                this.dialog.closeAll()
                 sessionStorage.setItem('user',JSON.stringify(res))
                 this.router.navigate(['/home']);
             }, err => {
+                this.dialog.closeAll()
                 console.log(err);
+                alert(err.message)
                 this.errorMessage = err.message;
             })
     }

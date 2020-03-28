@@ -8,7 +8,7 @@
         <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false" *ngIf="!expandsidemenu"><img imgSrc="Web/Icons/toolbarLogo.png" class="logo_img_short"></div>
         <div fxLayout="column " fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false" *ngIf="expandsidemenu"><img imgSrc="Web/Icons/toolbarLogo.png" class="logo_img_full"></div>
       </div>
-      <div fxLayout="column wrap" fxFlex="95" fxLayoutAlign="center center" [fxShow]="true" [fxHide]="false" fxHide.gt-sm="true"><img imgSrc="Web/Versod logo 3.png" routerLink="[&apos;./home&apos;]"></div>
+      <div fxLayout="column wrap" fxFlex="95" fxLayoutAlign="center center" [fxShow]="true" [fxHide]="false" ><img imgSrc="Web/Versod logo 3.png" routerLink="[&apos;./home&apos;]"></div>
       <div fxLayout="column wrap" fxFlex="10" fxLayoutAlign="center end" [fxShow]="true" [fxHide]="false">
         <mat-icon style="color: rgb(128, 110, 110);     " class="curs_point" (click)="logout()">power_settings_new</mat-icon>
       </div>
@@ -20,7 +20,7 @@
     <div fxLayout="row wrap" fxLayoutAlign="center stretch" [fxShow]="true" [fxHide]="false" fxHide.lt-md="true" [ngClass]="expandsidemenu? &apos;width_2&apos; : &apos;width_1&apos;">
       <div fxLayout="column wrap" fxLayoutGap=".8em" fxLayoutAlign="start center" [fxShow]="true" [fxHide]="false">
         <div fxLayout="column " fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
-          <div fxLayout="column wrap" fxLayoutAlign="center center" [fxShow]="true" [fxHide]="false"><img imgSrc="Web/Versod logo 3.png"></div>
+          <!-- <div fxLayout="column wrap" fxLayoutAlign="center center" [fxShow]="true" [fxHide]="false"><img imgSrc="Web/Versod logo 3.png"></div> -->
           <div fxLayout="column wrap" fxLayoutAlign="center center" [fxShow]="true" [fxHide]="true">
             <p class="margin_0">Neutrinos</p>
             <p class="margin_0">{{username}}</p>
